@@ -8,6 +8,7 @@ const widths = [400, 400];
 const sizes = "(min-width: 100px) 10vw, 10vw";
 import { Image } from '@astrojs/image/components';
 import owexlogomark from '../assets/owexlogomark1.png';
+import favicon from '../assets/favicon.svg';
 
 const navItems: Array<NavItem> = [
   { title: "Services", url: "#services" },
@@ -21,9 +22,9 @@ const navItems: Array<NavItem> = [
 >
   <a class="flex items-center gap-1 hover:!text-default" href="#">
     <h1 class="sr-only">Owex Labs</h1>
-    <Image src={owexlogomark} alt="O logo" width="50" height="50"/>
+    <Image src={favicon} alt="O logo" width="50" height="50"/>
     <div
-    id="owexwordmark"
+    id="favicon"
     class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
   ><Picture
   class="h-full w-full object-cover"
