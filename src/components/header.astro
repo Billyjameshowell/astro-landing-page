@@ -2,10 +2,15 @@
 import { Icon } from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
+import owexwordmark  from "../assets/owexwordmark.svg";
+import { Picture } from "@astrojs/image/components";
+const widths = [400, 400];
+const sizes = "(min-width: 100px) 10vw, 10vw";
+import { Image } from '@astrojs/image/components';
+import owexlogomark from '../assets/owexlogomark1.png';
 
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
+  { title: "Services", url: "#services" },
   { title: "Showcase", url: "#showcase" },
 ];
 ---
@@ -14,10 +19,20 @@ const navItems: Array<NavItem> = [
   id="page-header"
   class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="h-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+  <a class="flex items-center gap-1 hover:!text-default" href="#">
+    <h1 class="sr-only">Owex Labs</h1>
+    <Image src={owexlogomark} alt="O logo" width="50" height="50"/>
+    <div
+    id="owexwordmark"
+    class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+  ><Picture
+  class="h-full w-full object-cover"
+  src={owexwordmark}
+  widths={widths}
+  sizes={sizes}
+  loading="eager"
+  alt="A floating astronaut in a space suit"
+/></div>
   </a>
   <div>
     <div class="flex items-center gap-6">
