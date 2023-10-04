@@ -20,3 +20,8 @@ export interface NavItem {
   title: string;
   url: string;
 }
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}

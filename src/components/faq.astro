@@ -1,0 +1,34 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { FAQItem } from "~/types";
+
+const faqs: Array<FAQItem> = [
+  {
+    question: "What is Programmatic SEO?",
+    answer: "pSEO is the practice of using AI, automation and SEO research to generate landing pages and blog content at scale."
+  },
+  {
+    question: "What results can I expect?",
+    answer: "Clients using our system will usually see an immediate uptick in impressions and ranking keywords. SEO is a long-term game. After a few months of using our system you can expect an increased domain ranking and traffic."
+  },
+  {
+    question: "Won't Google know I'm using AI-generated content?",
+    answer: "Google maintains that it doesn't penalize AI-content. It only penalizes bad content that doesn't meet their e-e-a-t guidelines, which is consistent with our experience."
+  },
+  // ... more FAQ items
+];
+---
+
+<ContentSection title="Frequently Asked Questions" id="faq">
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {
+      faqs.map(({ question, answer }) => (
+        <li class="flex flex-col items-start border border-default bg-offset p-6">
+          <p class="font-bold text-lg">{question}</p>
+          <p class="text-offset text-sm">{answer}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
