@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://solid-fortnight-4jp456px6693j96j-3000.app.github.dev",
+  site: "https://owexlabs.com",
   integrations: [tailwind(), image({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), sitemap()],
