@@ -1,0 +1,25 @@
+---
+import "@fontsource-variable/inter";
+import Compatibility from "~/components/compatibility.astro";
+import Services from "~/components/services.astro";
+import Footer from "~/components/footer.astro";
+import Header from "~/components/header.astro";
+import Intro from "~/components/intro.astro";
+import Outro from "~/components/outro.astro";
+import FAQ from "~/components/faq.astro";
+import Showcase from "~/components/showcase.astro";
+import Splash from "~/components/splash.astro";
+import "~/styles/index.css";
+import BlogList from "~/components/blog-list.astro";
+import Layout from "~/layouts/layout.astro";
+
+const { generator, site } = Astro;
+const image = new URL("social.png", site);
+const description =
+  "Elevate Your Online Presence, on autopilot. Owex Labs is your dedicated SEO ally in the digital realm. Our expertise in Programmatic SEO empowers startups to skyrocket their organic traffic through bulk, high-ranking content creation. ";
+---
+
+<Layout>
+
+  <BlogList />
+</Layout>
