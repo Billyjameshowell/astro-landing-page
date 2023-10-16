@@ -24,11 +24,15 @@ console.log("Post Data:", post);
 ---
 <Layout>
     <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
+        class="gradient-text text-left font-extrabold tracking-tighter text-8xl"
       >
 <h1>{post.data.title}</h1>
 </div>
-<div class="prose lg:prose-xl prose-headings:text-blue-600 prose-p:text-pink-400">
+<h2>{post.data.date}</h2>
+<h2>{post.data.author}</h2>
+<div 
+class="prose lg:prose-xl prose-headings:text-blue-600 prose-p:text-pink-400"
+>
 <Content />
 </div>
 </Layout>

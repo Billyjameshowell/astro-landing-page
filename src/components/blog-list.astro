@@ -1,9 +1,15 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
+
+// Fetch the blog posts
 const blogPosts = await getCollection("blog", ({ data }) => {
   return !data.draft && data.date < new Date();
 });
+
+// Sort the blog posts by date in descending order (most recent first)
+blogPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+
 const { post } = Astro.props;
 ---
 
@@ -16,17 +22,17 @@ const { post } = Astro.props;
     <h1 class="gradient-text font-extrabold tracking-tighter text-6xl mb-4">Blog Posts</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {blogPosts.map((post, index) => (
-        <div class="bg-white rounded-md shadow-md p-4" key={`post-${index}`}>
-          <div
-            class="gradient-text text-left font-extrabold tracking-tighter text-6xl"
-          >
-            {post.data.title}
+        <a class="block" href={`/blog/${post.slug}`} key={`post-${index}`}>
+          <div class="bg-white rounded-md shadow-md p-4 hover:bg-gray-100">
+            <div class="gradient-text text-left font-extrabold tracking-tighter text-6xl">
+              {post.data.title}
+            </div>
+            <p class="text-gray-600">{post.data.description}</p>
+            <p class="text-blue-500 font-semibold hover:underline">
+              Read Post
+            </p>
           </div>
-          <p class="text-gray-600">{post.data.description}</p>
-          <a class="text-blue-500 font-semibold hover:underline" href={`/blog/${post.slug}`}>
-            Read Post
-          </a>
-        </div>
+        </a>
       ))}
     </div>
   </div>

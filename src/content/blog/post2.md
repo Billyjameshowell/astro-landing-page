@@ -1,7 +1,7 @@
 ---
 title: Post 2
 description: this is my first blog post
-date: 2023-10-16
+date: 2023-10-15
 draft: false
 author: John Doe
 ---
