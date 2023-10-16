@@ -31,6 +31,7 @@ const { post } = Astro.props;
             <p class="text-blue-500 font-semibold hover:underline">
               Read Post
             </p>
+            <p class="text-gray-400 mt-2">{post.data.stringDate}</p> {/* Add this line */}
           </div>
         </a>
       ))}

@@ -2,6 +2,7 @@
 title: Post 1
 description: this is my first blog post
 date: 2023-10-12
+stringDate: October 12, 2023
 draft: false
 author: Billy Howell
 ---
