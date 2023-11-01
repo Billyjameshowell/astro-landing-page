@@ -7,7 +7,10 @@
   --color-background-offset: theme("colors.gray.100");
   --color-border: theme("colors.gray.900" / 10%);
   --wordmark-color: #000000; /* Replace with the color for light theme wordmark */
+}
 
+[data-theme="light"] .prose a {
+  color: var(--color-secondary); /* Link color for light theme */
 }
 
 [data-theme="dark"] {
@@ -21,3 +24,6 @@
   --wordmark-color: #FFFFFF; /* Replace with the color for dark theme wordmark */
 }
 
+[data-theme="dark"] .prose a {
+  color: var(--color-secondary); /* Link color for dark theme */
+}

@@ -1,9 +1,0 @@
-fragment BlogParts on Blog {
-  __typename
-  title
-  description
-  stringDate
-  draft
-  author
-  body
-}
