@@ -7,7 +7,7 @@ draft: false
 author: Billy Howell
 ---
 In this case study we discuss the SEO strategies we implemented to triple this website's traffic in just 3 months.
-![Hockey Stick Graph](../pseo-traffic-spike.png)
+![Hockey Stick Graph](../../pseo-traffic-spike.png)
 Isn't this a pretty chart? If you want your site's traffic to look like this you should stop reading now and book a [discovery call](https://calendly.com/billy-owex/owex-labs-intro).
 
 Otherwise, continue reading to learn how we did it.
