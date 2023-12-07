@@ -1,0 +1,14 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection} from "astro:content";
+const blogPosts = await getCollection("blog", ({data}) => {
+return !data.draft && data.date < new Date()
+ });
+const { post } = Astro.props;
+---
+
+<article class="blog-card">
+  <h2>{post.data.title}</h2>
+  <p>{post.data.description}</p>
+  <p>Author: {posts.data.author}</p>
+</article>

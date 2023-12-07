@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const services: Array<FeatureItem> = [
+  {
+    title: "SEO facelift",
+    description:
+      "Our comprehenensive SEO facelift audits your website for 150+ technical common SEO mistakes. It will save you hours of researching SEO best practices. ",
+    icon: "mdi:magnify",
+  },
+  {
+    title: "SEO content system",
+    description:
+      "Create hundreds of quality landing pages and blog posts using our proven pSEO system. ",
+    icon: "mdi:content-copy",
+  },
+  
+  {
+    title: "Automation Consulting",
+    description:
+      "Don't need SEO help but interested in using AI and automations to run your business? We can help.",
+    icon: "mdi:state-machine",
+  },
+  {
+    title: "Earned Media",
+    description:
+      "Want to get your articles places on hundreds of news websites? Book a call today to learn how we can syndicate your content and increase your backlinks as wel as traffic.",
+    icon: "mdi:link-box",
+  },
+  {
+    title: "Bulk TikTok Contet",
+    description:
+      "Grow your reach on TikTok. Our content creators will create daily TikToks designed to go viral.",
+    icon: "mdi:video-box",
+  },
+  {
+    title: "Email Marketing",
+    description:
+      "Want an automated system to get more leads and book more calls? We'll set it up for you.",
+    icon: "mdi:email-open",
+  },
+];
+---
+
+<ContentSection title="Services" id="services">
+  
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      services.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

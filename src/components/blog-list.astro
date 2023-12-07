@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+// Fetch the blog posts
+const blogPosts = await getCollection("blog", ({ data }) => {
+  return !data.draft && data.date < new Date();
+});
+
+// Sort the blog posts by date in descending order (most recent first)
+blogPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+
+const { post } = Astro.props;
+---
+<head>
+  <meta name="generator" content={Astro.generator} />
+</head>
+
+<body>
+  <div class="container mx-auto p-4">
+    <h1 class="gradient-text font-extrabold tracking-tighter text-6xl mb-4">Blog Posts</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      {blogPosts.map((post, index) => (
+        <a class="block" href={`/blog/${post.slug}`} key={`post-${index}`}>
+          <div class="bg-white rounded-md shadow-md p-4 hover:bg-gray-100 h-full flex flex-col justify-between">
+            <div class="h-32 overflow-hidden">
+              <div class="gradient-text text-left font-extrabold tracking-tighter text-xl w-fit">
+              {post.data.title}
+              </div>
+            </div>
+            <div class="flex flex-col justify-end">
+              <p class="text-gray-600 text-sm line-clamp-2">{post.data.description}</p>
+              <p class="text-blue-500 font-semibold hover:underline mt-2">
+                Read Post
+              </p>
+              <p class="text-gray-400 mt-2">{post.data.stringDate}</p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</body>
