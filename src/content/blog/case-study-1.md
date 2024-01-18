@@ -1,5 +1,5 @@
 ---
-title: PSEO Case Study 1
+title: Programmatic SEO in Action — Does it really work?
 description: Learn how we took doubled this sports startup traffic in just 3 months with programmatic SEO.
 date: 2023-11-01
 stringDate: November 1, 2023
