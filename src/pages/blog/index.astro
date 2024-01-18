@@ -15,11 +15,26 @@ import Layout from "~/layouts/layout.astro";
 
 const { generator, site } = Astro;
 const image = new URL("social.png", site);
-const description =
-  "Level up your SEO game with the Owex Labs blog. We write case studies on how our startup clients gained an edge on the competition using our system.";
+const { title, description } = Astro.props;
 ---
 
-<Layout>
+<Layout title="Blog" description="Learn how you can use pSEO to elevate your traffic. We write case studies on real clients.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
 
   <BlogList />
 </Layout>
