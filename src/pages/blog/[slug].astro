@@ -2,7 +2,8 @@
 import Layout from '../../layouts/layout.astro'
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+const { title, description } = Astro.props;
 export async function getStaticPaths(){
     const blogPosts = await getCollection("blog", ({data}) => {
 return !data.draft && data.date < new Date()
@@ -22,7 +23,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 console.log("Post Data:", post);
 ---
-<Layout>
+<Layout title={post.data.title} description={post.data.description}>
     <head>
     <title>{post.data.title}</title>
     <meta name="description" content={post.data.description} />

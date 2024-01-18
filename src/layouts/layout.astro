@@ -10,11 +10,11 @@ import FAQ from "~/components/faq.astro";
 import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
-
+const { title, description} = Astro.props;
+console.log("Title:", title);
+console.log("Description:", description);
 const { generator, site } = Astro;
 const image = new URL("social.png", site);
-const description =
-  "Elevate your online presence, on autopilot. Our pSEO system helps you skyrocket your organic traffic through bulk, high-ranking content creation.";
 ---
 
 <!doctype html>
@@ -25,11 +25,11 @@ const description =
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <title>Owex Labs</title>
+    <title>{title}</title>
     <meta name="description" content={description} />
 
     <!-- social media -->
-    <meta property="og:title" content="Owex Labs" />
+    <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />

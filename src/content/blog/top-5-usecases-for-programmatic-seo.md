@@ -1,6 +1,6 @@
 ---
 title: Top 5 Usecases for Programmatic SEO
-description: this is my first blog post
+description: How to use pSEO to outrank your competitors in just a few months
 date: 2023-10-16
 stringDate: October 16, 2023
 draft: false
