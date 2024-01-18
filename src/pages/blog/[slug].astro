@@ -3,39 +3,41 @@ import Layout from '../../layouts/layout.astro'
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import { CollectionEntry } from "astro:content";
-
-export async function getStaticPaths() {
-  const blogPosts = await getCollection("blog", ({ data }) => {
-    return !data.draft && data.date < new Date()
-  });
-
-  return blogPosts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post: { data: { title: post.data.title, description: post.data.description } } },
-  }));
+export async function getStaticPaths(){
+    const blogPosts = await getCollection("blog", ({data}) => {
+return !data.draft && data.date < new Date()
+ });
+    
+    return blogPosts.map((post) => ({
+        params: {slug: post.slug},
+        props: { post},
+    }));
 }
 
 interface Props {
-  post: CollectionEntry<"blog">;
+    post: CollectionEntry<"blog">;
 }
-
 const { post } = Astro.props;
-const { Content } = await post.render();
 
+const { Content } = await post.render();
+console.log("Post Data:", post);
+---
 <Layout>
-  <head>
+    <head>
     <title>{post.data.title}</title>
     <meta name="description" content={post.data.description} />
   </head>
-  
-  <div class="gradient-text text-left font-extrabold tracking-tighter text-8xl">
-    <h1>{post.data.title}</h1>
-  </div>
-  
-  <h2>{post.data.stringDate}</h2>
-  <h2>{post.data.author}</h2>
-  
-  <div class="prose lg:prose-xl prose-headings:text-blue-600 prose-p:text-pink-400 prose-li:text-white">
-    <Content />
-  </div>
+    <div
+        class="gradient-text text-left font-extrabold tracking-tighter text-8xl"
+      >
+<h1>{post.data.title}</h1>
+</div>
+<h2>{post.data.stringDate}</h2>
+<h2>{post.data.author}</h2>
+<div 
+class="prose lg:prose-xl prose-headings:text-blue-600 prose-p:text-pink-400 prose-li:text-white"
+>
+<Content />
+</div>
 </Layout>
+
