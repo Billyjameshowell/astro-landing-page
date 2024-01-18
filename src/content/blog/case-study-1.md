@@ -40,7 +40,7 @@ First we set up an Airtable to act as a hub for all blog content.
 
 Next we set up KiwiWriter to bulk create SEO content using ChatGPT 4 and Claude 2 APIs (please try Kiwiwriter, I'll give you free credits).
 
-We connected Airtable to our Webflow CMS collection with [Whalesync](whalesync.com). 
+We connected Airtable to our Webflow CMS collection with [Whalesync](https://www.whalesync.com). 
 
 Note: KiwiWriter offers syncing straight to Webflow but at the moment doesn't offer some of the more fancy automations I like to use in Airtable. For a pSEO novice KiwiWriter and Webflow should be sufficient!
 
