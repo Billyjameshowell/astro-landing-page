@@ -3,7 +3,8 @@ import Layout from '../../layouts/layout.astro'
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-const { title, description } = Astro.props;
+import BlogPostingJSONLD from "../../components/BlogPostingJSONLD.astro";
+const { title, description, date } = Astro.props;
 export async function getStaticPaths(){
     const blogPosts = await getCollection("blog", ({data}) => {
 return !data.draft && data.date < new Date()
@@ -23,8 +24,9 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 console.log("Post Data:", post);
 ---
-<Layout title={post.data.title} description={post.data.description}>
+<Layout title={post.data.title} description={post.data.description} date={post.data.date} author={post.data.author}>
     <head>
+    <BlogPostingJSONLD slot="head" {...Astro.props} />
     <title>{post.data.title}</title>
     <meta name="description" content={post.data.description} />
   </head>
