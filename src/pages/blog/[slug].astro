@@ -26,9 +26,9 @@ console.log("Post Data:", post);
 ---
 <Layout title={post.data.title} description={post.data.description} date={post.data.date} author={post.data.author}>
     <head>
-    <BlogPostingJSONLD slot="head" {...Astro.props} />
     <title>{post.data.title}</title>
     <meta name="description" content={post.data.description} />
+    <BlogPostingJSONLD slot="head" title={post.data.title} description={post.data.description} date={post.data.date} />
   </head>
     <div
         class="gradient-text text-left font-extrabold tracking-tighter text-8xl"
