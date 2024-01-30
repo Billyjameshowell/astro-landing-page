@@ -21,13 +21,14 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
    
-      <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
-      >
-        10x your
-        <br /> traffic with
-        <br /> programmatic SEO.
-      </div>
+    <div
+    class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
+  >
+    10x your
+    <br /> traffic with
+    <br />
+    <span id="dynamic-offering">programmatic SEO.</span>
+  </div>  
     </h2>
     <div
       id="astronaut"
@@ -81,4 +82,40 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       @apply block;
     }
   }
+  #dynamic-offering {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+  #dynamic-offering {
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  width: 50%;
+  min-width: 200px; /* Minimum width */
+  max-width: 400px; /* Maximum width */
+}
+
+
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const offerings = ['email sequences', 'communities', 'a product hunt launch', 'PPC ads'];
+    let currentIndex = 0;
+    const offeringElement = document.getElementById('dynamic-offering');
+
+    function cycleOfferings() {
+      offeringElement.style.opacity = 0;
+      offeringElement.style.visibility = 'hidden';
+
+      setTimeout(() => {
+        offeringElement.textContent = offerings[currentIndex] + '.';
+        currentIndex = (currentIndex + 1) % offerings.length;
+        offeringElement.style.opacity = 1;
+        offeringElement.style.visibility = 'visible';
+      }, 500);
+    }
+
+    setInterval(cycleOfferings, 3000);
+  });
+</script>
