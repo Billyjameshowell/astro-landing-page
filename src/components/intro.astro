@@ -3,21 +3,68 @@ import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
 ---
 
-<ContentSection title="Supercharge your SEO" id="intro">
+<ContentSection title="Supercharge your Startup" id="startup-marketing">
   <Fragment slot="lead">
-    Grow your <span class="text-primary">organic traffic</span> with <span class="text-secondary">high-ranking</span> content
-    using our proprietary <span class="text-primary">AI content system</span>.
+    We understand the <span class="text-primary">unique marketing hurdles</span> startups face. <br /> <br />
+    We <span class="text-secondary">simplify this journey</span> and unlock growth potential for startups like yours.
   </Fragment>
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-1">
-
+  
+  <div class="buttons-container">
     <a 
       href="https://calendly.com/billy-owex/owex-labs-intro" 
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
       aria-label="Book a demo with Calendly"
     >
       <Icon pack="mdi" name="rocket" class="h-8" />
-      <span>Book My Free Demo</span>
+      <span>Free Demo</span>
     </a>
-    </div>
-    
+    <a 
+      href="https://calendly.com/billy-owex/owex-labs-intro" 
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      aria-label="Book a demo with Calendly"
+    >
+      <Icon pack="mdi" name="arrow-right" class="h-8" />
+      <span>view pricing</span>
+    </a>
+    <!-- Add another button here if needed -->
+  </div>
 </ContentSection>
+
+<style>
+  .title {
+    /* Add your title styling here */
+  }
+
+  .subtitle {
+    /* Add your subtitle styling here */
+  }
+
+  .description {
+    /* Existing styles for description, if any, or add new ones */
+  }
+
+  .buttons-container {
+    /* Styles to position your buttons */
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem; /* Adjust as needed */
+  }
+
+  .button-demo {
+    /* Add your button styling here */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Adjust gap as needed */
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    border-radius: 25px; /* Adjust border-radius as needed */
+    text-decoration: none; /* Removes underline from links */
+    /* Add other styles such as background, border, etc., as needed */
+  }
+
+  /* Responsive design adjustments (if any) */
+  @media (max-width: your-breakpoint-here) {
+    /* Adjust styles for mobile if needed */
+  }
+</style>

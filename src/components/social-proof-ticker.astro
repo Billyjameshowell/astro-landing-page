@@ -1,0 +1,81 @@
+---
+// Add your Astro frontmatter script here
+---
+
+<div class="trusted-container">
+  <p class="trusted-text">Trusted by startups like you</p>
+  <div class="url-ticker">
+    <div class="url-item"><a href="https://arenaclub.com/">arenaclub.com</a></div>
+    <div class="url-item"><a href="https://www.readingfutures.com/">readingfutures.com</a></div>
+    <div class="url-item"><a href="https://boylepublicaffairs.com/">boylepublicaffairs.com</a></div>
+    <div class="url-item"><a href="https://playhenry.com/">playhenry.com</a></div>
+    <div class="url-item"><a href="https://targetedvictory.com/">targetedvictory.com</a></div>
+    <div class="url-item"><a href="https://www.standwithcrypto.org/">standwithcrypto.org</a></div>
+    <!-- Duplicate URL items as needed to fill the width for scrolling -->
+    <div class="url-item"><a href="https://arenaclub.com/">arenaclub.com</a></div>
+    <div class="url-item"><a href="https://www.readingfutures.com/">readingfutures.com</a></div>
+    <div class="url-item"><a href="https://boylepublicaffairs.com/">boylepublicaffairs.com</a></div>
+    <div class="url-item"><a href="https://playhenry.com/">playhenry.com</a></div>
+    <div class="url-item"><a href="https://targetedvictory.com/">targetedvictory.com</a></div>
+    <div class="url-item"><a href="https://www.standwithcrypto.org/">standwithcrypto.org</a></div>
+  </div>
+</div>
+
+<style>
+.trusted-container {
+  text-align: center; /* Center the text and ticker */
+  margin: 1rem 0; /* Spacing around the container */
+}
+
+.trusted-text {
+    align: center;
+  color: var(--color-text-offset);; /* Text color */
+  margin-bottom: 0.5rem; /* Spacing between text and ticker */
+  font-size: 1.25rem; /* Size of the text */
+}
+
+.url-ticker {
+align: center;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #111827; /* Background color */
+}
+
+.url-item {
+  display: inline-flex; /* Changed to inline-flex for better alignment */
+  align-items: center; /* Vertical alignment */
+  justify-content: center; /* Horizontal alignment */
+  padding-right: 50px; /* Space between URLs */
+  padding-left: 50px;
+  min-width: 250px; /* Set a minimum width for each item */
+  animation: scrollUrls 20s linear infinite; /* Adjust the time as needed */
+}
+
+.url-item a {
+  color: var(--color-text-offset);; /* Text color for URLs */
+  text-decoration: none; /* Removes underline from links */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.url-item a:hover {
+  color: #4ade80; /* Highlight color on mouseover */
+}
+
+/* Create the animation for scrolling */
+@keyframes scrollUrls {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-100%); /* Adjust based on the total width of the duplicated items */
+  }
+}
+
+
+
+/* Pause the animation on hover */
+.url-ticker:hover .url-item {
+  animation-play-state: paused;
+}
+</style>
