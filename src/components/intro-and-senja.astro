@@ -1,0 +1,37 @@
+---
+import Senja from "./senja.astro";
+import Intro from "./intro.astro";
+import ContentSection from "~/components/content-section.astro";
+import Icon from "astro-icon";
+---
+
+
+
+
+<div class="grid grid-cols-2 ml-auto">
+<Senja />
+<div>
+<ContentSection title="Supercharge your Startup" id="startup-marketing"></ContentSection>
+<div class="buttons-container">
+    <a 
+      href="https://calendly.com/billy-owex/owex-labs-intro" 
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      aria-label="Book a demo with Calendly"
+    >
+      <Icon pack="mdi" name="rocket" class="h-8" />
+      <span>Free Demo</span>
+    </a>
+    <a 
+      href="https://calendly.com/billy-owex/owex-labs-intro" 
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      aria-label="Book a demo with Calendly"
+    >
+      <Icon pack="mdi" name="arrow-right" class="h-8" />
+      <span>view pricing</span>
+    </a>
+    <!-- Add another button here if needed -->
+  </div>
+  </div>
+<Intro />
+</div>
+
